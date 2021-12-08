@@ -28,3 +28,13 @@ const traverseGraphDepthFirst = (graph, start) => {
 
 
 traverseGraphDepthFirst(graph, 'a');
+
+
+const traverseGraphDepthFirstRecursive = (graph, current) => {
+    console.log(current)
+    for (let neighbor of graph[current]) {
+        traverseGraphDepthFirstRecursive(graph, neighbor);
+    }
+}
+
+traverseGraphDepthFirstRecursive(graph, 'a');
