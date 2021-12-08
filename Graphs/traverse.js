@@ -8,7 +8,6 @@ const graph = {
 }
 
 
-
 const traverseGraphDepthFirst = (graph, start) => {
 
     const stack = [start];
@@ -25,8 +24,6 @@ const traverseGraphDepthFirst = (graph, start) => {
 
 }
 
-
-
 traverseGraphDepthFirst(graph, 'a');
 
 
@@ -38,3 +35,18 @@ const traverseGraphDepthFirstRecursive = (graph, current) => {
 }
 
 traverseGraphDepthFirstRecursive(graph, 'a');
+
+
+const traverseGraphBreadthFirst = (graph, current) => {
+
+    const queue = [current];
+    while (queue.length > 0) {
+        const curr = queue.shift();
+        console.log(curr);
+        for (let neighbor of graph[curr]) {
+            queue.push(neighbor);
+        }
+    }
+}
+
+traverseGraphBreadthFirst(graph, 'a');
